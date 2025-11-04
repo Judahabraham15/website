@@ -25,7 +25,7 @@ const data = [
     <div className=" w-[90%] p-6 bg-white rounded-xl">
       <header className="mb-4">
         <h2 className="text-2xl font-semibold mb-1">MATH 161: DESCRIPTIVE STATISTICS</h2>
-        <h2 className="text-sm text-gray-500 mb-1">NAME: Abraham Judah Oluwaseun</h2>
+        <h2 className="text-sm text-black mb-1">NAME: <span className="bg-black">Abraham Judah Oluwaseun</span></h2>
         <h2 className="text-sm text-black ">MATRIC NO: <span className="bg-black">250910010</span></h2>
       </header>
 
