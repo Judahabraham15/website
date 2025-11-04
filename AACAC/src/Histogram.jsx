@@ -19,7 +19,7 @@ const data = [
   { age: "60+", value: 5.3 },
 ];
 
-export default function NigeriaPopulationHistogram() {
+ const Histogram = () => {
   return (
     <div className="items-center justify-center flex flex-col min-h-screen bg-white">
     <div className=" w-[90%] p-6 bg-white rounded-xl">
@@ -69,3 +69,4 @@ export default function NigeriaPopulationHistogram() {
       </div>
   );
 }
+export default Histogram;
