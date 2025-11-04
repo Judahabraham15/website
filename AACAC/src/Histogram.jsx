@@ -26,7 +26,7 @@ const data = [
       <header className="mb-4">
         <h2 className="text-2xl font-semibold mb-1">MATH 161: DESCRIPTIVE STATISTICS</h2>
         <h2 className="text-sm text-gray-500 mb-1">NAME: Abraham Judah Oluwaseun</h2>
-        <h2 className="text-sm text-gray-500 ">MATRIC NO: 250910010</h2>
+        <h2 className="text-sm text-black ">MATRIC NO: <span className="bg-black">250910010</span></h2>
       </header>
 
       <motion.div
