@@ -22,21 +22,40 @@ const data = [
 const Histogram = () => {
   return (
     <div className="items-center justify-center flex flex-col min-h-screen bg-white">
-      {" "}
-      <div className=" w-[90%] p-6 bg-white rounded-xl">
-        {" "}
+      <div className="w-[90%] p-6 bg-white rounded-xl">
         <header className="mb-4">
-          {" "}
           <h2 className="text-2xl font-semibold mb-1">
             MATH 161: DESCRIPTIVE STATISTICS
-          </h2>{" "}
+          </h2>
           <h2 className="text-sm text-black mb-1">
-            NAME: <span className="bg-black">Abraham Judah Oluwaseun</span>
-          </h2>{" "}
-          <h2 className="text-sm text-black ">
-            MATRIC NO: <span className="bg-black">250910010</span>
-          </h2>{" "}
+            NAME: <input type="text" className="border rounded-md"/>
+          </h2>
+          <h2 className="text-sm text-black">
+            MATRIC NO:  <input type="text" className="border rounded-md"/>
+          </h2>
         </header>
+
+        
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full border border-gray-300 text-center">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border border-gray-300 px-4 py-2">Age Group (years)</th>
+                <th className="border border-gray-300 px-4 py-2">Population (millions)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((row, i) => (
+                <tr key={i} className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-2">{row.age}</td>
+                  <td className="border border-gray-300 px-4 py-2">{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+       
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,31 +67,23 @@ const Histogram = () => {
             <BarChart
               data={data}
               margin={{ top: 20, right: 24, left: 12, bottom: 40 }}
-              barCategoryGap={0} // ✅ Ensures bars touch (true histogram look)
+              barCategoryGap={0} 
             >
               <CartesianGrid strokeDasharray="3 3" />
-
               <XAxis dataKey="age" tick={{ fontSize: 14 }}>
-                <Label
-                  value="Age group (years)"
-                  position="bottom"
-                  offset={18}
-                />
+                <Label value="Age group (years)" position="bottom" offset={18} />
               </XAxis>
-
               <YAxis
                 tick={{ fontSize: 13 }}
                 label={{
                   value: "Population (millions)",
                   angle: -90,
-                  position: "insideLeft",
+                  position: "centerLeft",
                   offset: 8,
                 }}
                 domain={[0, "dataMax + 5"]}
               />
-
               <Tooltip formatter={(value) => `${value} million`} />
-
               <Bar
                 dataKey="value"
                 fill="#2563EB"
